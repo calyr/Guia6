@@ -2,6 +2,9 @@ package edu.bo.ucb.guia6
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
 
 class MainActivity : AppCompatActivity() {
@@ -12,5 +15,19 @@ class MainActivity : AppCompatActivity() {
         supportActionBar.let {
             setSupportActionBar(toolbar)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_search -> {
+                Log.d("TEST", "PRESS ICON SEARCH")
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
